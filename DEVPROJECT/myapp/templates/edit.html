@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+  
+{% block title %}Adicionar Novos Produtos{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/update/{{employee.id}}">  
+    {% csrf_token %}  
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update Details</h3>  
+        </div> 
+        <div class="mb-3"> 
+            <label>Codigo produto:</label>  
+            <input type="text" class="form-control" name="Codigoproduto" id="id_Codigoproduto" required maxlength="20" value="{{ employee.Codigoproduto }}"/>    
+        </div> 
+        <div class="mb-3"> 
+            <label>Nome:</label>  
+            <input type="text" class="form-control" name="Nome" id="id_Nome" required maxlength="100" value="{{ employee.Nome }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Codigo barras:</label>  
+            <input type="Codigobarras" class="form-control" name="Codigobarras" id="id_Codigobarras" required maxlength="254" value="{{ employee.Codigobarras }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Preço:</label>  
+            <input type="text" class="form-control" name="Preco" id="id_Preço" required maxlength="15" value="{{ employee.Preco }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-success btn-lg">Update</button>  
+        </div> 
+    </div>  
+    </form>  
+{% endblock content %}   
